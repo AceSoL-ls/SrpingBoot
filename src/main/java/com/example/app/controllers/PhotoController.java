@@ -26,7 +26,7 @@ public class PhotoController {
         Photo n = null;
         for (Photo g : photos){
             if (g.getId()==id){
-                n = g;
+                return g;
             }
         }
         return n;
