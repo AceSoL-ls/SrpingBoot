@@ -14,6 +14,8 @@ public class PhotoController {
 
     public PhotoController() {
         photos.add(new Photo(nextid++, "2025", "Happy hour"));
+        photos.add(new Photo(nextid++, "2012", "Matrix"));
+        photos.add(new Photo(nextid++, "2019", "Hero"));
     }
     @GetMapping("")
     public List<Photo> get(){
