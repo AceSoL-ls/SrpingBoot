@@ -1,6 +1,7 @@
 package com.example.app.controllers;
 
 import com.example.app.models.Photo;
+import com.example.app.view.PhotoView;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.List;
 @RequestMapping("/api/photos")
 public class PhotoController {
     private List<Photo> photos = new ArrayList<>();
+    private PhotoView view;
     private Integer nextid = 1;
 
     public PhotoController() {
