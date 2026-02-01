@@ -1,9 +1,11 @@
 package com.example.app.controllers;
 
 import com.example.app.models.Photo;
+import com.example.app.services.PhotoNotFound;
 import com.example.app.view.PhotoView;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +33,7 @@ public class PhotoController {
                 return g;
             }
         }
-        return n;
+        throw new PhotoNotFound();
     }
 
     @PostMapping("")
