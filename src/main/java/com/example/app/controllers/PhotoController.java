@@ -21,6 +21,11 @@ public class PhotoController {
         return repo.findAll();
     }
 
+    @GetMapping
+    public Photo getById(@PathVariable Integer id){
+        return repo.findById(id).orElse(null);
+    }
+
     @PostMapping
     public Photo create(@RequestBody Photo p) {
         return repo.save(p);
