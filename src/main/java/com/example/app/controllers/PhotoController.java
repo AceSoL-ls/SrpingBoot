@@ -21,7 +21,7 @@ public class PhotoController {
         return repo.findAll();
     }
 
-    @GetMapping
+    @GetMapping("/{id}")
     public Photo getById(@PathVariable Integer id){
         return repo.findById(id).orElse(null);
     }
