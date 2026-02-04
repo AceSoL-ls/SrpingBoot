@@ -1,16 +1,19 @@
-version: '3.8'
+version: "3.9"
 
 services:
-  mysql-db:
-    image: mysql:8.0
-    container_name: mysql-spring
+  mysql:
+    image: mysql:8.4
+    container_name: mysql-db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: photodb
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: photo_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: 1234
     ports:
       - "3306:3306"
     volumes:
-      - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
