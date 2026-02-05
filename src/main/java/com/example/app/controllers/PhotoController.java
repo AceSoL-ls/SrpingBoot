@@ -31,6 +31,12 @@ public class PhotoController {
         return repo.save(p);
     }
 
+    @PutMapping("/{id}")
+    public Photo update(@RequestBody Photo p, @PathVariable Integer id){
+        p.setId(id);
+        return repo.save(p);
+    }
+
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
         repo.deleteById(id);
